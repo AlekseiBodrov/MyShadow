@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  MyShadow
-//
-//  Created by Алексей on 30.11.2022.
-//
-
 import UIKit
 
 @main
