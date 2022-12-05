@@ -1,6 +1,9 @@
 # MyShadow
 
-![Presentation](./presentation/5.gif)
+<p align="row">
+<img src= "https://github.com/AlekseiBodrov/MyShadow/blob/main/presentation/5.gif" width="200" >
+</p>
+<br />
 
 ## Оглавление
 - **[Краткое описание](#Basic)**
