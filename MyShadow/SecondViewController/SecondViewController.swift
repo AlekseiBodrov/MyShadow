@@ -40,9 +40,9 @@ final class SecondViewController: UIViewController {
     //MARK: - flow funcs
     func move(){
 
-        timer = Timer.scheduledTimer(withTimeInterval: 20, repeats: true, block: { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { _ in
             let distanceY = self.isMoveUp == false ? self.view.frame.height - 50 : 50
-            UIView.animate(withDuration: 20) {
+            UIView.animate(withDuration: 10) {
                 self.sunView.frame.origin.y = distanceY
                 self.getArrayViews().forEach({
                     self.configuration(with: $0)
