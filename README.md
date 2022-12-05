@@ -1,4 +1,7 @@
 # MyShadow
+
+![Presentation](./presentation/5.gif)
+
 ## Оглавление
 - **[Краткое описание](#Basic)**
 - **[Презентация](#Presentation)**
@@ -8,8 +11,8 @@
 - Проект написан на **UIKit**
 - Использована архитеутра **MVC**
 - Адаптивная верстка интерфейса **кодом**. Проверна на **iPhoneSE (3st generation)**
-## <a id="Presentation"></a>Презентация
 
+## <a id="Presentation"></a>Презентация
 <p align="row">
 <img src= "https://github.com/AlekseiBodrov/MyShadow/blob/main/presentation/1.png" width="200" >
 <img src= "https://github.com/AlekseiBodrov/MyShadow/blob/main/presentation/2.png" width="200" >
@@ -23,4 +26,4 @@
 ## <a id="Task"></a>Задание
 - Необходимо написать приложение, в котором тень от вью будет отбрасываться в зависимости от положения "солнца" на экране с учетом расстояния до этого "солнца".
 - При разработке приложения необходимо использовать архитектуру MVC
-Язык программирования для реализации тестового задания – Swift 5.3+
+- Язык программирования для реализации задания – Swift
