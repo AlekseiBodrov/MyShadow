@@ -1,9 +1,11 @@
 import UIKit
 
-class FirstViewController: UIViewController {
+final class FirstViewController: UIViewController {
 
-    let sunView = UIView()
+    //MARK: - let/var
+    private let sunView = UIView()
 
+    //MARK: - IBOutlets
     @IBOutlet weak var oneTopView: UIView!
     @IBOutlet weak var towTopView: UIView!
     @IBOutlet weak var threeTopView: UIView!
@@ -11,6 +13,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var towCenterView: UIView!
     @IBOutlet weak var bottomView: UIView!
 
+    //MARK: - life cycle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
         configure ()
@@ -22,7 +25,8 @@ class FirstViewController: UIViewController {
         })
     }
 
-    func configuration(with view: UIView) {
+    //MARK: - flow funcs
+    private func configuration(with view: UIView) {
         let size = FirstModel.getOffsetForShadow(positionSun: sunView, positionView: view)
         view.dropShadow(offset: size)
     }
@@ -42,7 +46,7 @@ class FirstViewController: UIViewController {
         view.addGestureRecognizer(recognizer)
     }
 
-    func getArrayViews() -> [UIView]{
+    private func getArrayViews() -> [UIView]{
         let arrayViews = [
             self.oneTopView,
             self.towTopView,
@@ -60,39 +64,36 @@ class FirstViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    @IBAction func upButtonPressed(_ sender: UIButton) {
+    private func moveViewHorizontaly(with distance: CGFloat) {
         UIView.animate(withDuration: 2) {
-            self.sunView.frame.origin.y = self.view.frame.origin.y + 100
+            self.sunView.frame.origin.x = distance
+            self.getArrayViews().forEach({
+                self.configuration(with: $0)
+            })
+
+        }
+    }
+
+    private func moveViewVerticaly(with distance: CGFloat) {
+        UIView.animate(withDuration: 2) {
+            self.sunView.frame.origin.y = distance
             self.getArrayViews().forEach({
                 self.configuration(with: $0)
             })
         }
     }
 
+    //MARK: - IBAction
+    @IBAction private func upButtonPressed(_ sender: UIButton) {
+        moveViewVerticaly(with: self.view.frame.origin.y + 100)
+    }
     @IBAction func downButtonPressed(_ sender: UIButton) {
-        UIView.animate(withDuration: 2) {
-            self.sunView.frame.origin.y = self.view.frame.size.height - 200
-            self.getArrayViews().forEach({
-                self.configuration(with: $0)
-            })
-        }
+        moveViewVerticaly(with: self.view.frame.size.height - 200)
     }
-
     @IBAction func leftButtonPressed(_ sender: UIButton) {
-        UIView.animate(withDuration: 2) {
-            self.sunView.frame.origin.x = self.view.frame.origin.x + 10
-            self.getArrayViews().forEach({
-                self.configuration(with: $0)
-            })
-
-        }
+        moveViewHorizontaly(with: self.view.frame.origin.x + 10)
     }
     @IBAction func rightButtonPressed(_ sender: UIButton) {
-        UIView.animate(withDuration: 2) {
-            self.sunView.frame.origin.x = self.view.frame.size.width - 50
-            self.getArrayViews().forEach({
-                self.configuration(with: $0)
-            })
-        }
+        moveViewHorizontaly(with: self.view.frame.size.width - 50)
     }
 }

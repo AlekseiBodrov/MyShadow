@@ -16,6 +16,7 @@
 		D76CC56929370F240082C580 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76CC56829370F240082C580 /* SecondViewController.swift */; };
 		D76CC56C293714330082C580 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76CC56B293714330082C580 /* UIView+extensions.swift */; };
 		D76CC56E2937192E0082C580 /* FirstModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76CC56D2937192E0082C580 /* FirstModel.swift */; };
+		D772CE5129385B25004C4D62 /* SecondModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D772CE5029385B25004C4D62 /* SecondModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D76CC56829370F240082C580 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D76CC56B293714330082C580 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		D76CC56D2937192E0082C580 /* FirstModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModel.swift; sourceTree = "<group>"; };
+		D772CE5029385B25004C4D62 /* SecondModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,16 +64,11 @@
 		D76CC55129370E630082C580 /* MyShadow */ = {
 			isa = PBXGroup;
 			children = (
+				D778949B293896910074C040 /* Application */,
 				D76CC56A2937141C0082C580 /* Ext */,
-				D76CC55229370E630082C580 /* AppDelegate.swift */,
-				D76CC55429370E630082C580 /* SceneDelegate.swift */,
-				D76CC55829370E630082C580 /* Main.storyboard */,
-				D76CC55B29370E650082C580 /* Assets.xcassets */,
-				D76CC55D29370E650082C580 /* LaunchScreen.storyboard */,
-				D76CC56029370E650082C580 /* Info.plist */,
-				D76CC56D2937192E0082C580 /* FirstModel.swift */,
-				D76CC56629370F140082C580 /* FirstViewController.swift */,
-				D76CC56829370F240082C580 /* SecondViewController.swift */,
+				D778949C293896BB0074C040 /* Resources */,
+				D778949D293896FF0074C040 /* FirstViewController */,
+				D778949E2938970D0074C040 /* SecondViewController */,
 			);
 			path = MyShadow;
 			sourceTree = "<group>";
@@ -82,6 +79,44 @@
 				D76CC56B293714330082C580 /* UIView+extensions.swift */,
 			);
 			path = Ext;
+			sourceTree = "<group>";
+		};
+		D778949B293896910074C040 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D76CC55229370E630082C580 /* AppDelegate.swift */,
+				D76CC55429370E630082C580 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D778949C293896BB0074C040 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D76CC55829370E630082C580 /* Main.storyboard */,
+				D76CC55B29370E650082C580 /* Assets.xcassets */,
+				D76CC55D29370E650082C580 /* LaunchScreen.storyboard */,
+				D76CC56029370E650082C580 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D778949D293896FF0074C040 /* FirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D76CC56D2937192E0082C580 /* FirstModel.swift */,
+				D76CC56629370F140082C580 /* FirstViewController.swift */,
+			);
+			path = FirstViewController;
+			sourceTree = "<group>";
+		};
+		D778949E2938970D0074C040 /* SecondViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D772CE5029385B25004C4D62 /* SecondModel.swift */,
+				D76CC56829370F240082C580 /* SecondViewController.swift */,
+			);
+			path = SecondViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +194,7 @@
 				D76CC56C293714330082C580 /* UIView+extensions.swift in Sources */,
 				D76CC55529370E630082C580 /* SceneDelegate.swift in Sources */,
 				D76CC56929370F240082C580 /* SecondViewController.swift in Sources */,
+				D772CE5129385B25004C4D62 /* SecondModel.swift in Sources */,
 				D76CC56E2937192E0082C580 /* FirstModel.swift in Sources */,
 				D76CC56729370F140082C580 /* FirstViewController.swift in Sources */,
 			);
@@ -309,7 +345,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q6CQH2T6SR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyShadow/Info.plist;
+				INFOPLIST_FILE = MyShadow/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -337,7 +373,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q6CQH2T6SR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyShadow/Info.plist;
+				INFOPLIST_FILE = MyShadow/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

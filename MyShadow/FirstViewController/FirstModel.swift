@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class FirstModel {
+final class FirstModel {
 
     static func getOffsetForShadow (positionSun: UIView, positionView: UIView) -> CGSize {
         let xSun = positionSun.center.x
