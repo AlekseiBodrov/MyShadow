@@ -17,6 +17,7 @@ final class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure ()
+        configureGestureRecognizer()
     }
 
     override func viewDidLayoutSubviews() {
@@ -41,9 +42,24 @@ final class FirstViewController: UIViewController {
             $0.rounded(radius: 5)
         })
 
-        let recognizer = UISwipeGestureRecognizer(target: self, action: #selector(gestureDetected))
-        recognizer.direction = .left
-        view.addGestureRecognizer(recognizer)
+
+    }
+
+    private func configureGestureRecognizer() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeDetected))
+        swipeRecognizer.direction = .left
+        view.addGestureRecognizer(swipeRecognizer)
+
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(tapDetected))
+        sunView.addGestureRecognizer(panRecognizer)
+    }
+
+    @objc private func tapDetected(recognizer: UIPanGestureRecognizer) {
+        let translation = recognizer.translation(in: self.view)
+        print(translation)
+        sunView.center = CGPoint(x: sunView.center.x + translation.x,
+                                y: sunView.center.y + translation.y)
+        recognizer.setTranslation(CGPointZero, in: self.view)
     }
 
     private func getArrayViews() -> [UIView]{
@@ -59,7 +75,7 @@ final class FirstViewController: UIViewController {
         return array
     }
 
-    @objc private func gestureDetected () {
+    @objc private func swipeDetected () {
        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else { return }
         navigationController?.pushViewController(controller, animated: true)
     }
